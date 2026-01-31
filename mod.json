@@ -1,0 +1,11 @@
+{
+    "geode": "1.0.0",
+    "version": "1.0.0",
+    "id": "recuration.cds",
+    "name": "Crazy Death SFX",
+    "developer": "Recuration",
+    "description": "Custom death sounds with volume, pitch, and speed controls. Load your own sound files!",
+    "repository": "",
+    "tags": ["gameplay", "sound", "customization"],
+    "settings": []
+}

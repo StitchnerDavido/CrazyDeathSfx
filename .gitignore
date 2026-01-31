@@ -1,0 +1,12 @@
+*.geode
+build-*/
+build/
+*.mp3
+*.wav
+*.ogg
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*.temp

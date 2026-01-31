@@ -1,0 +1,30 @@
+name: Build CrazyDeathSfx Mod
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-android32:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install Geode CLI
+      run: |
+        curl -fsSL https://github.com/geode-sdk/cli/releases/latest/download/install.sh | bash
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        
+    - name: Install Android 32-bit SDK
+      run: geode sdk install-binaries -p android32
+      
+    - name: Build Mod
+      run: geode build -p android32
+      
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: CrazyDeathSfx-android32
+        path: build-android32/*.geode
