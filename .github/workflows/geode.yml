@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Install Geode CLI
       run: |
-        wget -q https://github.com/geode-sdk/cli/releases/latest/download/geode-cli-linux
-        chmod +x geode-cli-linux
-        sudo mv geode-cli-linux /usr/local/bin/geode
-        
+        wget -q https://github.com/geode-sdk/cli/releases/latest/download/geode-cli-linux-x86_64
+        chmod +x geode-cli-linux-x86_64
+        sudo mv geode-cli-linux-x86_64 /usr/local/bin/geode
+
     - name: Install Android 32-bit SDK
       run: geode sdk install-binaries -p android32
-      
+
     - name: Build Mod
       run: geode build -p android32
-      
+
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
