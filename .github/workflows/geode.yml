@@ -14,8 +14,9 @@ jobs:
     
     - name: Install Geode CLI
       run: |
-        curl -fsSL https://github.com/geode-sdk/cli/releases/latest/download/install.sh | bash
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        wget -q https://github.com/geode-sdk/cli/releases/latest/download/geode-cli-linux
+        chmod +x geode-cli-linux
+        sudo mv geode-cli-linux /usr/local/bin/geode
         
     - name: Install Android 32-bit SDK
       run: geode sdk install-binaries -p android32
